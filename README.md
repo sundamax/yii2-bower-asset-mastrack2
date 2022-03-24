@@ -8,10 +8,11 @@
 
 Yii 2 core Bower packages for official Composer repository installation
 
-[![Latest Stable Version](https://poser.pugx.org/yidas/yii2-bower-asset/v/stable?format=flat-square)](https://packagist.org/packages/yidas/yii2-bower-asset)
-[![License](https://poser.pugx.org/yidas/yii2-bower-asset/license?format=flat-square)](https://packagist.org/packages/yidas/yii2-bower-asset)
-[![Total Downloads](https://poser.pugx.org/yidas/yii2-bower-asset/downloads?format=flat-square)](https://packagist.org/packages/yidas/yii2-bower-asset)
-[![Monthly Downloads](https://poser.pugx.org/yidas/yii2-bower-asset/d/monthly?format=flat-square)](https://packagist.org/packages/yidas/yii2-bower-asset)
+[![Latest Stable Version](https://poser.pugx.org/bohdansapientpro/yii2-bower-asset/v/stable?format=flat-square)](https://packagist.org/packages/bohdansapientpro/yii2-bower-asset)
+[![Total Downloads](https://poser.pugx.org/bohdansapientpro/yii2-bower-asset/downloads?format=flat-square)](https://packagist.org/packages/bohdansapientpro/yii2-bower-asset)
+[![Latest Unstable Version](https://poser.pugx.org/bohdansapientpro/yii2-bower-asset/v/unstable?format=flat-square)](https://packagist.org/packages/bohdansapientpro/yii2-bower-asset)
+[![License](https://poser.pugx.org/bohdansapientpro/yii2-bower-asset/license?format=flat-square)](https://packagist.org/packages/bohdansapientpro/yii2-bower-asset)
+[![Monthly Downloads](https://poser.pugx.org/bohdansapientpro/yii2-bower-asset/d/monthly?format=flat-square)](https://packagist.org/packages/bohdansapientpro/yii2-bower-asset)
 
 FEATURES
 --------
@@ -43,31 +44,31 @@ INSTALLATION
 
 ### 1. Require Package
 
-In Yii2 `composer.json`, require `yidas/yii2-bower-asset` before `yiisoft/yii2`.
+In Yii2 `composer.json`, require `bohdansapientpro/yii2-bower-asset` before `yiisoft/yii2`.
 
 Example `composer.json`:
 
 ```
 "require": {
     "php": ">=5.4.0",
-    "yidas/yii2-bower-asset": "~2.0.5",
+    "bohdansapientpro/yii2-bower-asset": "~2.0.5",
     "yiisoft/yii2": "~2.0.5",
     "yiisoft/yii2-bootstrap": "~2.0.0"
 }
 ```
 
-After above setting, you could run `composer require yidas/yii2-bower-asset` to install the package. It's same as [yidas/yii2-composer-bower-skip](https://github.com/yidas/yii2-composer-bower-skip) which makes composer to install and update for Yii2 without Bower plugin.
+After above setting, it's same as [bohdansapientpro/yii2-composer-bower-skip](https://github.com/bohdansapientpro/yii2-composer-bower-skip) which makes composer to install and update for Yii2 without Bower plugin.
 
 
 ### 2. Set Up Application Config
 
-In Yii2 application `config/web.php`, added an alias named `@bower` pointed to `@vendor/yidas/yii2-bower-asset/bower`:
+In Yii2 application `config/web.php`, added an alias named `@bower` pointed to `@vendor/bohdansapientpro/yii2-bower-asset/bower`:
 
 ```php
 $config = [
     ...
     'aliases' => [
-        '@bower' => '@vendor/yidas/yii2-bower-asset/bower'
+        '@bower' => '@vendor/bohdansapientpro/yii2-bower-asset/bower'
     ],
     ...
 ];
@@ -108,18 +109,18 @@ If you doesn't has Yii2 project yet, choose one of below ways to create:
 
 You can use Composer to create Yii2 project by using following package:  
 
-#### [yidas/yii2-app-basic](https://github.com/yidas/yii2-app-basic)
+#### [bohdansapientpro/yii2-app-basic](https://github.com/bohdansapientpro/yii2-app-basic)
 
 ```
-composer create-project --prefer-dist yidas/yii2-app-basic
+composer create-project --prefer-dist bohdansapientpro/yii2-app-basic
 ``` 
 
-#### [yidas/yii2-app-advanced](https://github.com/yidas/yii2-app-advanced)
+#### [bohdansapientpro/yii2-app-advanced](https://github.com/bohdansapientpro/yii2-app-advanced)
 ```
-composer create-project --prefer-dist yidas/yii2-app-advanced
+composer create-project --prefer-dist bohdansapientpro/yii2-app-advanced
 ```
 
-These packages are Yii 2 Application Template with fixed Bower, which including [`yidas/yii2-bower-asset`](https://github.com/yidas/yii2-bower-asset) already.
+These packages are Yii 2 Application Template with fixed Bower, which including [`bohdansapientpro/yii2-bower-asset`](https://github.com/bohdansapientpro/yii2-bower-asset) already.
 
 
 ### Creating Project from Official Site
@@ -135,33 +136,33 @@ If you don't want to [Set Up Application Config](#2-set-up-application-config) b
 
 #### Install via Package Cloning Installer
 
-In Yii2 `composer.json`, add script `yidas\\yii2BowerAsset\\Installer::bower` in `post-package-install` & `post-package-update` event.
+In Yii2 `composer.json`, add script `bohdansapientpro\\yii2BowerAsset\\Installer::bower` in `post-package-install` & `post-package-update` event.
 
 ```
 "scripts": {
     "post-package-install": [
-         "yidas\\yii2BowerAsset\\Installer::clone"
+         "bohdansapientpro\\yii2BowerAsset\\Installer::clone"
     ],
     "post-package-update": [
-         "yidas\\yii2BowerAsset\\Installer::clone"
+         "bohdansapientpro\\yii2BowerAsset\\Installer::clone"
     ]
 }
 ```
 
 #### Install via Alias Setting Installer
 
-In Yii2 `composer.json`, add script `yidas\\yii2BowerAsset\\Installer::setAlias` in `post-update-cmd` event.
+In Yii2 `composer.json`, add script `bohdansapientpro\\yii2BowerAsset\\Installer::setAlias` in `post-update-cmd` event.
 
 ```
 "scripts": {
     "post-package-install": [
-         "yidas\\yii2BowerAsset\\Installer::setAlias"
+         "bohdansapientpro\\yii2BowerAsset\\Installer::setAlias"
     ],
     "post-package-update": [
-         "yidas\\yii2BowerAsset\\Installer::setAlias"
+         "bohdansapientpro\\yii2BowerAsset\\Installer::setAlias"
     ],
     "unset-yii2-bower-asset": [
-        "yidas\\yii2BowerAsset\\Installer::unsetAlias"
+        "bohdansapientpro\\yii2BowerAsset\\Installer::unsetAlias"
     ]
 }
 ```
